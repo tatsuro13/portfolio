@@ -1,9 +1,12 @@
-import React from 'react'
+import Button from '@material-ui/core/Button';
 
 const Home: React.FC = () => {
   return (
-    <h1>Hello.World!!!</h1>
-  )
-}
+    <>
+      <h1>Hello.World!!!</h1>
+      <Button variant="contained">DEFAULT BUTTON</Button>
+    </>
+  );
+};
 
-export default Home
+export default Home;
