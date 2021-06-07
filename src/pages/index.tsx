@@ -1,10 +1,15 @@
-import Button from '@material-ui/core/Button';
+import { ThemeProvider } from '@material-ui/styles';
+import PageTemplate from '../components/layouts/PageTemplate';
+import theme from '../components/utils/theme';
 
 const Home: React.FC = () => {
   return (
     <>
-      <h1>Hello.World!!!</h1>
-      <Button variant="contained">DEFAULT BUTTON</Button>
+      <ThemeProvider theme={theme}>
+        <PageTemplate title="Portfolio of Sixth Project 13">
+          <h1>Hello Sixth!</h1>
+        </PageTemplate>
+      </ThemeProvider>
     </>
   );
 };
