@@ -68,9 +68,10 @@ const Header = () => {
               <Typography
                 style={{
                   color: 'inherit',
+                  cursor: 'pointer',
                   fontWeight: router.pathname.match(link) ? 'bold' : 'normal',
                   borderBottom:
-                    router.pathname.match(link) && '1px solid #757ce8',
+                    router.pathname.match(link) && '5px solid #757ce8',
                 }}
               >
                 {name}
@@ -111,6 +112,7 @@ const Header = () => {
                           ? 'primary'
                           : 'rgb(107 107 107)',
                       fontWeight: router.pathname === link ? 'bold' : 'normal',
+                      cursor: 'pointer',
                     }}
                   >
                     {name}
@@ -150,6 +152,7 @@ const Header = () => {
                 fontSize: '1.75em',
                 position: 'relative',
                 zIndex: 100,
+                cursor: 'pointer',
               }}
             >
               SixthProject

@@ -47,7 +47,7 @@ const Footer = () => {
                   style={{
                     fontWeight: router.pathname.match(link) ? 'bold' : 'normal',
                     borderBottom:
-                      router.pathname.match(link) && '1px solid #757ce8',
+                      router.pathname.match(link) && '5px solid #757ce8',
                   }}
                 >
                   {name}
