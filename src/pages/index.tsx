@@ -8,6 +8,7 @@ import PageTemplate from '../components/layouts/PageTemplate';
 import theme from '../components/utils/theme';
 
 import { getLatestPosts } from '../lib/api';
+import Introductions from '../components/home/Introductions';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -15,17 +16,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-interface Item {
-  name: string;
-  description: string;
-  color: string;
-}
-
 interface Introduction {
   title: string;
   description: string;
   action: string;
-  href: string;
+  skillSet: boolean;
 }
 
 interface Post {
@@ -49,48 +44,27 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home = ({ latestPosts }) => {
   const classes = useStyles();
 
-  const items: Item[] = [
-    {
-      name: 'Slide1',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      color: '#64ACC8',
-    },
-    {
-      name: 'Slide2',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      color: '#7D85B1',
-    },
-    {
-      name: 'Slide3',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      color: '#CE7E78',
-    },
-  ];
-
   const introductions: Introduction[] = [
     {
-      title: 'Service',
+      title: 'About us',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      action: 'About Service >',
-      href: '/service',
+        '前職（2021年4月末）PM（6割）とフロントエンドエンジニア（4割）兼務しておりました。WordPressや静的なWebサイトの受託制作会社で直近まで働いておりました。reactやrubyのキャッチアップは業務時間外でのものが多く実務では通年ガッツリとSPA開発をしておりません（APIなどを使用する場合は使用しておりました）。reactを使用するようなモダンなSPA開発はそれなりにできると思いますがが実務経験が乏しいのが現時点の要約になりますのでそれでもよければ。。という形となります。至らない点もありますが能動的なフットワークで技術のキャッチアップを行い仕事に活かしております。',
+      action: 'About us >',
+      skillSet: false,
     },
     {
-      title: 'Company',
+      title: 'What I do',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '現在UI/UXも含めたディレクションやwebサイトの制作経験からSPAの開発まで多岐に渡り対応しております（キャッチアップ含む）',
       action: 'About Company >',
-      href: '/company',
+      skillSet: true,
     },
     {
-      title: 'Recruit',
+      title: 'Biography',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        '1980年生まれ。私立文系大学を卒業後服飾の専門学校でパターンメーキングの基礎を学び20代をパタンナーとして過ごす。その後30代からwebデザイナーに転身。前職をあわせて2社の受託webサイト制作会社にてPM兼デザイナー兼フロントエンドエンジニアとして従事。現在フロントエンドエンジニアとして深めるため求職活動中。フレームワークだったらreactが一番触ってる（vue.jsもAngularも触ったことはあります）',
       action: 'About Recruit >',
-      href: '/recruit',
+      skillSet: false,
     },
   ];
 
@@ -99,6 +73,28 @@ const Home = ({ latestPosts }) => {
       <ThemeProvider theme={theme}>
         <PageTemplate title="Sixth Project 13's Profile">
           <>
+            {introductions.map((introduction, index) => (
+              <Container
+                key={index}
+                maxWidth="lg"
+                className={classes.container}
+              >
+                <Grid
+                  container
+                  justify={index % 2 == 0 ? 'flex-start' : 'flex-end'}
+                >
+                  <Grid item lg={6} md={6}>
+                    <Introductions
+                      index={index}
+                      title={introduction.title}
+                      description={introduction.description}
+                      action={introduction.action}
+                      skillSet={introduction.skillSet}
+                    />
+                  </Grid>
+                </Grid>
+              </Container>
+            ))}
             <Container maxWidth="lg" className={classes.container}>
               <Typography
                 variant="h1"
