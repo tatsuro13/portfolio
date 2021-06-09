@@ -9,6 +9,8 @@ import theme from '../components/utils/theme';
 
 import { getLatestPosts } from '../lib/api';
 import Introductions from '../components/home/Introductions';
+import GreetingLottie from '../components/utils/DisplayLottie';
+import code from '../../public/lottie/webdev.json';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -73,6 +75,17 @@ const Home = ({ latestPosts }) => {
       <ThemeProvider theme={theme}>
         <PageTemplate title="Sixth Project 13's Profile">
           <>
+            <Container maxWidth="sm" className={classes.container}>
+              <GreetingLottie animationData={code} />
+            </Container>
+            <Typography
+              variant="h3"
+              align="center"
+              style={{ marginBottom: '2rem' }}
+            >
+              ［本サイトは Next.js(ISR,SWR) + react +
+              headlessCMS（Works）で構成されています。］
+            </Typography>
             {introductions.map((introduction, index) => (
               <Container
                 key={index}
