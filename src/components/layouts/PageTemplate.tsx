@@ -12,6 +12,7 @@ const PageTemplate = ({ children, title }: PageTemplateProps) => {
     <>
       <Head>
         <title>{title ? title : 'Portfolio of Sixth Project 13'}</title>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
       </Head>
       <header>
         <Header />
