@@ -73,7 +73,7 @@ const Home = ({ latestPosts }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <PageTemplate title="Sixth Project 13's Profile">
+        <PageTemplate title="Sixth Project 13's Portfolio">
           <>
             <Container maxWidth="sm" className={classes.container}>
               <GreetingLottie animationData={code} />

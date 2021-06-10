@@ -54,7 +54,9 @@ const Post = ({ id, title, thumbnail, body }: PostProps) => {
       <Container className={classes.container}>
         <Grid container direction="column" alignItems="center">
           <Grid item>
-            <ShareButton url={`https://**********/works/${id}`} />
+            <ShareButton
+              url={`https://portfolio-seven-sandy.vercel.app/works/${id}`}
+            />
           </Grid>
         </Grid>
       </Container>

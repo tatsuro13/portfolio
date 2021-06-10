@@ -40,7 +40,7 @@ const worksId = ({ post }: Post) => {
   return (
     <ThemeProvider theme={theme}>
       <PageTemplate
-        title={`${post.title} | Works | Sixth Project 13's Profile`}
+        title={`${post.title} | Works | Sixth Project 13's Portfolio`}
       >
         <Post
           id={post.id}

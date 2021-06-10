@@ -18,6 +18,8 @@ const useStyles = makeStyles(() => ({
   cardMedia: {
     height: 0,
     paddingTop: '56.25%',
+    backgroundSize: 'cover',
+    backgroundPosition: 'top center',
   },
 }));
 
