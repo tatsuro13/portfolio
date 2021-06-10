@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Sixth Project 13's Profile</title>
+        <title>Sixth Project 13's Portfolio</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
