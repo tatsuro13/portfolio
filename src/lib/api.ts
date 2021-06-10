@@ -32,7 +32,7 @@ const params = (method: string, data?: {}) => {
 };
 
 export const getAllPosts = async (): Promise<Post[]> => {
-  const data = await fetch(`${baseUrl}/works`, params('GET'))
+  const data = await fetch(`${baseUrl}/works?offset=0&limit=100`, params('GET'))
     .then((res) => res.json())
     .catch(() => null);
 
