@@ -30,6 +30,46 @@ export default class MyDocument extends Document {
             </>
           )}
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta
+            name="description"
+            content="フロントエンドやデザイン・ディレクションも担当しているSixth Project 13のポートフォリオになります。"
+          />
+
+          <meta itemProp="name" content="Sixth Project 13's Portfolio" />
+          <meta
+            itemProp="description"
+            content="フロントエンドやデザイン・ディレクションも担当しているSixth Project 13のポートフォリオになります。"
+          />
+          <meta
+            itemProp="image"
+            content="https://portfolio-seven-sandy.vercel.app/ogimage.jpg"
+          />
+
+          <meta
+            property="og:url"
+            content="https://portfolio-seven-sandy.vercel.app"
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Sixth Project 13's Portfolio" />
+          <meta
+            property="og:description"
+            content="フロントエンドやデザイン・ディレクションも担当しているSixth Project 13のポートフォリオになります。"
+          />
+          <meta
+            property="og:image"
+            content="https://portfolio-seven-sandy.vercel.app/ogimage.jpg"
+          />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Sixth Project 13's Portfolio" />
+          <meta
+            name="twitter:description"
+            content="フロントエンドやデザイン・ディレクションも担当しているSixth Project 13のポートフォリオになります。"
+          />
+          <meta
+            name="twitter:image"
+            content="https://portfolio-seven-sandy.vercel.app/ogimage.jpg"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
