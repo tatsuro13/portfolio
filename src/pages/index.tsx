@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { Container, Grid, Typography } from '@material-ui/core';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 import Posts from '../components/works/Posts';
 import PageTemplate from '../components/layouts/PageTemplate';
@@ -11,6 +11,8 @@ import { getLatestPosts } from '../lib/api';
 import Introductions from '../components/home/Introductions';
 import GreetingLottie from '../components/utils/DisplayLottie';
 import code from '../../public/lottie/webdev.json';
+import Link from 'next/link';
+import { FormatAlignCenter } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -130,6 +132,20 @@ const Home = ({ latestPosts }) => {
                   </Grid>
                 ))}
               </Grid>
+              <Link href="/works/page/1">
+                <Button
+                  style={{
+                    marginTop: '3rem',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    display: 'flex',
+                  }}
+                  variant="contained"
+                  color="primary"
+                >
+                  Works See More
+                </Button>
+              </Link>
             </Container>
           </>
         </PageTemplate>
