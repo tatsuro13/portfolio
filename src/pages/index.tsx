@@ -1,22 +1,22 @@
-import { GetStaticProps } from 'next';
+import { GetStaticProps } from "next";
 
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { Button, Container, Grid, Typography } from "@material-ui/core";
 
-import Posts from '../components/works/Posts';
-import PageTemplate from '../components/layouts/PageTemplate';
-import theme from '../components/utils/theme';
+import Posts from "../components/works/Posts";
+import PageTemplate from "../components/layouts/PageTemplate";
+import theme from "../components/utils/theme";
 
-import { getLatestPosts } from '../lib/api';
-import Introductions from '../components/home/Introductions';
-import GreetingLottie from '../components/utils/DisplayLottie';
-import code from '../../public/lottie/webdev.json';
-import Link from 'next/link';
-import { FormatAlignCenter } from '@material-ui/icons';
+import { getLatestPosts } from "../lib/api";
+import Introductions from "../components/home/Introductions";
+import GreetingLottie from "../components/utils/DisplayLottie";
+import code from "../../public/lottie/webdev.json";
+import Link from "next/link";
+import { FormatAlignCenter } from "@material-ui/icons";
 
 const useStyles = makeStyles(() => ({
   container: {
-    marginTop: '3rem',
+    marginTop: "3rem",
   },
 }));
 
@@ -50,24 +50,24 @@ const Home = ({ latestPosts }) => {
 
   const introductions: Introduction[] = [
     {
-      title: 'About us',
+      title: "About us",
       description:
-        '前職（2021年4月末）PM（6割）とフロントエンドエンジニア（4割）兼務しておりました。WordPressや静的なWebサイトの受託制作会社で直近まで働いておりました。reactやrubyのキャッチアップは業務時間外でのものが多く実務では通年ガッツリとSPA開発をしておりません（APIなどを使用する場合は使用しておりました）。reactを使用するようなモダンなSPA開発はそれなりにできると思いますがが実務経験が乏しいのが現時点の要約になりますのでそれでもよければ。。という形となります。至らない点もありますが能動的なフットワークで技術のキャッチアップを行い仕事に活かしております。',
-      action: 'About us >',
+        "前職（2021年4月末）はwebサイト制作の受託開発でディレクター（7割）とフロントエンドエンジニア（3割）兼務しておりました。WordPressや静的なWebサイトがメインとなります、一部React.jsなどで仮想DOM操作のコンテンツも実装。現職（2021年8月〜）はReact.jsとTypescript、Next.js・GraphQLを使用したwebアプリケーションの開発を行っております。キャッチアップは業務時間外でのものが多く実務ではフロントエンドエンジニアとしては未熟です。React.jsを使用するようなモダンなSPA開発はそれなりにできると思いますがが実務経験が乏しいのが現時点の要約になりますのでそれでもよければ。。という形となります。至らない点もありますが能動的なフットワークで技術のキャッチアップを行い仕事に活かしております。",
+      action: "About us >",
       skillSet: false,
     },
     {
-      title: 'What I do',
+      title: "What I do",
       description:
-        '現在UI/UXも含めたディレクションやwebサイトの制作経験からSPAの開発まで多岐に渡り対応しております（キャッチアップ含む）',
-      action: 'About Company >',
+        "現在UI/UXも含めたディレクションやwebサイトの制作経験からSPAの開発まで多岐に渡り対応しております（キャッチアップ含む）",
+      action: "About Company >",
       skillSet: true,
     },
     {
-      title: 'Biography',
+      title: "Biography",
       description:
-        '1980年生まれ。私立文系大学を卒業後服飾の専門学校でパターンメーキングの基礎を学び20代をパタンナーとして過ごす。その後30代からwebデザイナーに転身。前職をあわせて2社の受託webサイト制作会社にてPM兼デザイナー兼フロントエンドエンジニアとして従事。現在フロントエンドエンジニアとして深めるため求職活動中。フレームワークだったらreactが一番触ってる（vue.jsもAngularも触ったことはあります）',
-      action: 'About Recruit >',
+        "1980年生まれ。私立文系大学を卒業後服飾の専門学校でパターンメーキングの基礎を学び20代をパタンナーとして過ごす。その後30代からwebデザイナーに転身。前職をあわせて2社の受託webサイト制作会社にてPM兼デザイナー兼フロントエンドエンジニアとして従事。現在フロントエンドエンジニアとして深めるため求職活動中。フレームワークだったらreactが一番触ってる（vue.jsもAngularも触ったことはあります）",
+      action: "About Recruit >",
       skillSet: false,
     },
   ];
@@ -83,7 +83,7 @@ const Home = ({ latestPosts }) => {
             <Typography
               variant="h3"
               align="center"
-              style={{ marginBottom: '2rem' }}
+              style={{ marginBottom: "2rem" }}
             >
               ［本サイトは Next.js(ISR,SWR) + react +
               headlessCMS（Works）で構成されています。］
@@ -96,7 +96,7 @@ const Home = ({ latestPosts }) => {
               >
                 <Grid
                   container
-                  justify={index % 2 == 0 ? 'flex-start' : 'flex-end'}
+                  justify={index % 2 == 0 ? "flex-start" : "flex-end"}
                 >
                   <Grid item lg={6} md={6}>
                     <Introductions
@@ -114,7 +114,7 @@ const Home = ({ latestPosts }) => {
               <Typography
                 variant="h1"
                 align="center"
-                style={{ marginBottom: '2rem' }}
+                style={{ marginBottom: "2rem" }}
               >
                 Latest Works
               </Typography>
@@ -135,10 +135,10 @@ const Home = ({ latestPosts }) => {
               <Link href="/works/page/1">
                 <Button
                   style={{
-                    marginTop: '3rem',
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    display: 'flex',
+                    marginTop: "3rem",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    display: "flex",
                   }}
                   variant="contained"
                   color="primary"
