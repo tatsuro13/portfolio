@@ -5,8 +5,8 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import theme from '../components/utils/theme';
 import '../styles/globals.css';
-import { Router } from 'next/router';
-import * as gtag from '../lib/gtag';
+import GoogleTagManager, { GtmId } from '../components/utils/GoogleTagManager';
+import { gtmId } from '../lib/gtag';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -15,21 +15,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
-
-  useEffect(() => {
-    if (!gtag.existsGaId) {
-      return;
-    }
-
-    const handleRouteChange = (path) => {
-      gtag.pageview(path);
-    };
-
-    Router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [Router.events]);
 
   return (
     <>
@@ -41,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
+      <GoogleTagManager gtmId={gtmId as GtmId} />
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
